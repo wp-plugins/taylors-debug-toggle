@@ -3,7 +3,7 @@ Contributors: taylor.mitchellstjoseph
 Tags: debug, wp_debug
 Requires at least: 3
 Tested up to: 4.1.1
-Stable tag: 0.0.1
+Stable tag: 1.0
 
 Toggle WP_DEBUG on/off through the admin toolbar
 
@@ -19,5 +19,8 @@ wp-config.php must be writable by the server and code must be in the default for
 3. Ensure wp-config.php is writable by the server and the debug definition is in the default format/spacing - **define('WP_DEBUG', false);**
 
 == Changelog ==
+1.0
+Prevented writing something other than "true/false" to wp_config and restructured version number 
+
 0.0.1
 Inital release

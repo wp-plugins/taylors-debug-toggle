@@ -4,7 +4,7 @@
 *   Description: Toggle WP_DEBUG on/off through the admin toolbar
 *   Author: Taylor Mitchell-St.Joseph
 *   Author URI: http://taylormitchellstjoseph.co.uk
-*   Version: 0.0.1
+*   Version: 1.0
 *   Text Domain: tdt
 */
 class TaylorsDebugToggle{
@@ -57,7 +57,7 @@ class TaylorsDebugToggle{
 
     function tdt_toggle(){
         if( isset( $_GET['tdt_toggle'] ) && !isset( $_GET['tdt_refresh'] ) ){
-            $debug_mode = $_GET['tdt_toggle'];
+            $debug_mode = in_array(array("true", "false"), $_GET['tdt_toggle']) ? $_GET['tdt_toggle'] : 'false'; //If tdt_toggle is not true or false, default it to false to avoid any nasties
             $current_mode = $_GET['tdt_toggle'] == "true" ? "false" : "true";
 
             $data = file_get_contents( $this->wp_config );
@@ -67,7 +67,7 @@ class TaylorsDebugToggle{
                 wp_redirect( $_SERVER['REQUEST_URI'] . "&tdt_refresh=true" );
                 die();
             }else{
-                wp_die( 'Error: Could not wirte to wp-config.php, please check permissions' );
+                wp_die( 'Error: Could not wirte to wp-config.php, please check file permissions!' );
             }
         }
     }
