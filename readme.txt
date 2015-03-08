@@ -1,8 +1,8 @@
 === Taylor's Debug Toggle ===
 Contributors: taylor.mitchellstjoseph
-Tags: debug
+Tags: debug, wp_debug
 Requires at least: 3
-Tested up to: 3.9.1
+Tested up to: 4.1.1
 Stable tag: 0.0.1
 
 Toggle WP_DEBUG on/off through the admin toolbar
